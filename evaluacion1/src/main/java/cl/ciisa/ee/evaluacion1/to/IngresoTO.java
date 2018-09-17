@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
+ * POJO que homologa el ingreso de una reserva
+ * de viaje.
+ * 
  * @author psep
- *
  */
 public class IngresoTO implements Serializable {
 
@@ -19,10 +21,20 @@ public class IngresoTO implements Serializable {
 	private Integer descuento;
 	private Long valorConDescuento;
 	
+	/**
+	 * Constructor vacío por defecto.
+	 */
 	public IngresoTO() {
 		
 	}
 
+	/**
+	 * Constructor sobrecargado.
+	 * 
+	 * @param vuelo
+	 * @param fechaIda
+	 * @param fechaVuelta
+	 */
 	public IngresoTO(VueloTO vuelo, Date fechaIda, Date fechaVuelta) {
 		super();
 		this.vuelo = vuelo;

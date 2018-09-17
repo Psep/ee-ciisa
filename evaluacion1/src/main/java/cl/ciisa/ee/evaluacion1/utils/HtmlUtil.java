@@ -7,11 +7,21 @@ import cl.ciisa.ee.evaluacion1.to.IngresoTO;
 import cl.ciisa.ee.evaluacion1.type.SeveridadType;
 
 /**
+ * Utilitarios varios para generar código HTML como String.
+ * 
  * @author psep
- *
  */
 public final class HtmlUtil {
 	
+	/**
+	 * Método estático que permite la generación de una tabla simple
+	 * en bootstrap a partir de un ArrayList de tipo IngresoTO. En caso
+	 * de ser nula o vacía la lista, la tabla tendrá una indicación de
+	 * que no hay registros (reservas) disponibles.
+	 * 
+	 * @param lista
+	 * @return String
+	 */
 	public static final String generateTable(ArrayList<IngresoTO> lista) {
 		StringBuilder table = new StringBuilder();
 		table.append("<table class=\"table\">");
@@ -25,7 +35,7 @@ public final class HtmlUtil {
 		table.append("</tr></thead>");
 		table.append("<tbody>");
 		
-		if (lista == null) {
+		if (lista == null || lista.size() == 0) {
 			table.append("<tr><td><td colspan=\"6\">No se encuentran reservas.</td></td></tr>");
 		} else {
 			Iterator<IngresoTO> it = lista.iterator();
@@ -59,8 +69,12 @@ public final class HtmlUtil {
 	}
 	
 	/**
+	 * Método estático que recibe un String y en caso de ser null,
+	 * reemplazará este valor por un "". Usado para la generación
+	 * de código HTML.
+	 * 
 	 * @param value
-	 * @return
+	 * @return String
 	 */
 	public static final String getNull(String value) {
 		return (value == null) ? "" : value;
@@ -102,10 +116,11 @@ public final class HtmlUtil {
 		StringBuilder builder = new StringBuilder();
 		builder.append("<!DOCTYPE html><html><head><meta charset=\"UTF-8\">");
 		builder.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">");
-		builder.append("<meta name=\"description\" content=\"ejercicio1\">");
+		builder.append("<meta name=\"description\" content=\"Reserva de Vuelos para la Evaluación 1\">");
+		builder.append("<meta name=\"keywords\" content=\"evaluacion1, reserva de vuelos, ciisa\">");
 		builder.append("<meta name=\"author\" content=\"Pablo Sepúlveda\">");
 		builder.append("<link rel=\"icon\" href=\"https://getbootstrap.com/favicon.ico\">");
-		builder.append("<title>Ejercicio 1 - Ciisa</title>");
+		builder.append("<title>Evaluación 1 - Ciisa</title>");
 		builder.append("<link rel=\"stylesheet\" href=\"assets/css/bootstrap.min.css\">");
 		builder.append("<link rel=\"stylesheet\" href=\"assets/css/main.css\">");
 		builder.append("<script src=\"assets/js/jquery-3.3.1.slim.min.js\"></script>");

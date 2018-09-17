@@ -5,14 +5,19 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
+ * Clase con utilitarios varios.
+ * 
  * @author psep
- *
  */
 public final class GenericUtil {
 	
 	/**
+	 * Método estático que permite la transformación de un objeto
+	 * de tipo Date en un String mediante SimpleDateFormat y el patrón
+	 * 'yyyy-MM-dd'. En caso de excepción, retornará null.
+	 * 
 	 * @param date
-	 * @return
+	 * @return String
 	 */
 	public static final String dateToString(Date date) {
 		try {
@@ -24,8 +29,13 @@ public final class GenericUtil {
 	}
 	
 	/**
+	 * Método estático que permite la transformación de un objeto
+	 * de tipo String en un Date mediante SimpleDateFormat y el patrón
+	 * 'yyyy-MM-dd'. En caso de excepción por String nulo o error de formato,
+	 * este retornará null.
+	 * 
 	 * @param fecha
-	 * @return
+	 * @return Date
 	 */
 	public static final Date stringToDate(String fecha) {
 		try {

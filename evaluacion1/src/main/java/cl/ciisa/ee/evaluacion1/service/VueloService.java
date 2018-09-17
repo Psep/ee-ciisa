@@ -16,16 +16,21 @@ import cl.ciisa.ee.evaluacion1.to.VueloTO;
 import cl.ciisa.ee.evaluacion1.type.ValorType;
 
 /**
+ * Servlet implementation class VueloService.
+ * <br>
+ * Se expone mediante el path GET '/vuelo/retrieve' como
+ * un servicio REST, se retorna un JSON con la lista de
+ * valores definidos en el requerimiento de la Evaluación 1.
+ * 
  * @author psep
- * 
- * Servlet implementation class VueloService
- * 
  */
 @WebServlet("/vuelo/retrieve")
 public class VueloService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
+     * Constructor por defecto del servlet.
+     * 
      * @see HttpServlet#HttpServlet()
      */
     public VueloService() {
@@ -33,6 +38,10 @@ public class VueloService extends HttpServlet {
     }
 
 	/**
+	 * Método GET del servlet que permite la iteración de un enum
+	 * (a falta aún de integración con alguna DB) la serialización
+	 * de una lista mediante Gson en formato JSON.
+	 * 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -54,6 +63,8 @@ public class VueloService extends HttpServlet {
 	}
 
 	/**
+	 * Método POST por defecto.
+	 * 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

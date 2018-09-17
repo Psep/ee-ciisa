@@ -3,8 +3,9 @@ package cl.ciisa.ee.evaluacion1.to;
 import java.io.Serializable;
 
 /**
+ * POJO para los datos relacionados al vuelo.
+ * 
  * @author psep
- *
  */
 public class VueloTO implements Serializable {
 
