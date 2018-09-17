@@ -28,3 +28,7 @@ hs_err_pid*
 .project
 .settings/
 target/
+/.metadata/
+RemoteSystemsTempFiles/
+/.recommenders/
+.tern-project
