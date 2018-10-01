@@ -35,6 +35,20 @@ $("#rut").change(function(){
     }
 });
 
+$("#television").change(function(){
+	var e = document.getElementById("television");
+	var tv = e.options[e.selectedIndex].value;
+	
+	if (tv == '') {
+		document.getElementById("instalaciones").value = '0';
+		document.getElementById("instalaciones").setAttribute("disabled", "disabled");
+	} else {
+		document.getElementById("instalaciones").removeAttribute("disabled");
+		document.getElementById("instalaciones").setAttribute("required");
+	}
+
+});
+
 /**
  * Hereda mediante prototype a la clase Date
  * la función que retorna un String bajo 
@@ -62,3 +76,20 @@ Date.prototype.toFormatString = function() {
 
 var minDate = new Date();
 document.getElementById("fecInstalacion").setAttribute("min", minDate.toFormatString());
+
+$("form").submit(function(event) {
+	var e = document.getElementById("television");
+	var tv = e.options[e.selectedIndex].value;
+	
+	var e1 = document.getElementById("telefonia");
+	var tel = e1.options[e1.selectedIndex].value;
+	
+	if (tv == "" && tel == "") {
+		alert('Debe seleccionar al menos un plan de telefonía y/o televisión.');
+		return false;
+	} else {
+		return true;
+	}
+});
+
+

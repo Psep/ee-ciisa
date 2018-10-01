@@ -74,13 +74,16 @@ public class SolicitudServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		
 		Solicitud solicitud = new Solicitud();
 		solicitud.setCliente(new Cliente());
 		solicitud.getCliente().setRut(request.getParameter("rut"));
 		solicitud.getCliente().setNombre(request.getParameter("nombre"));
 		solicitud.getCliente().setApellido(request.getParameter("apellido"));
-		solicitud.setCantInstTv(Integer.parseInt(request.getParameter("instalaciones")));
 		solicitud.setFechaInstalacion(request.getParameter("fecInstalacion"));
+		solicitud.setCantInstTv(0);
 		
 		String telefonia = request.getParameter("telefonia");
 		
@@ -91,13 +94,12 @@ public class SolicitudServlet extends HttpServlet {
 		String television = request.getParameter("television");
 		
 		if (television != null && !"".equals(television)) {
+			solicitud.setCantInstTv(Integer.parseInt(request.getParameter("instalaciones")));
 			solicitud.setTelevisionHogar(new TelevisionHogar().findById(Long.valueOf(request.getParameter("television"))));
 		}
 
 		this.calcular(solicitud);
 		
-		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
 		request.setAttribute("solicitudIngresada", solicitud);
 		request.getRequestDispatcher("detalle.jsp").forward(request, response);
 	}

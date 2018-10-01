@@ -145,7 +145,7 @@
 				<div class="form-group">
 					<label for="instalaciones">Num. de Instalaciones para TV (después de la 3ra, tiene un costo de $5000 mensual c/u)</label>
 					<input type="number" id="instalaciones" class="form-control" name="instalaciones"
-						max="10" min="0" maxlength="2" required>
+						max="10" min="0" maxlength="2" value="0" disabled>
 				</div>
 
 				<div class="form-group">
