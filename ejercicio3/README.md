@@ -1,7 +1,16 @@
 Ejercicio 3 para Taller de Aplicaciones
 =======================================
 
-Properties de configuración en src/main/resources/dao.properties
+Properties de configuración en src/main/resources/dao.properties (verifique sus credenciales a MySQL)
+
+Hay métodos no implementados en la capa DAO debido a que no fueron parte del requerimiento.
+
+Se adicionan los archivos sql a fin de no usar el modelo .mwb (formato MySQL Workbench) y que deben ser ejecutados en secuencia:
+
+- estructura.sql (data structure)
+- inserts.sql (datos para tabla Proveedor)
+
+![Screenshot](modelo.png)
 
 Para compilar considere:
 
