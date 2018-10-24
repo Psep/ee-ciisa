@@ -1,0 +1,2 @@
+INSERT INTO `evaluacion3`.`Persona` (`rut`, `dvRut`, `nombre`, `apellidos`) VALUES ('1', '9', 'Pepito', 'Los Palotes');
+INSERT INTO `evaluacion3`.`Usuario` (`username`, `passwd`, `Persona_idPersona`) VALUES ('plospalotes', '4c882dcb24bcb1bc225391a602feca7c', '1');
