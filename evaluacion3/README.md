@@ -21,3 +21,8 @@ El war resultante: target/evaluacion3.war
 ![Screenshot](captura1.png)
 
 ![Screenshot](captura2.png)
+
+Los datos de ejemplo para el usuario son:
+
+- username: plospalotes
+- password: 1234

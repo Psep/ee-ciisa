@@ -45,7 +45,7 @@
 						</div>
 						<div class="form-group">
 							<label for="passwd">Contraseña</label>
-							<input type="password" class="form-control" id="passwd" name="passwd" placeholder="Ingrese su contraseña" required="required">
+							<input type="password" class="form-control" id="passwd" name="passwd" placeholder="Ingrese su contraseña" required="required" size="4">
 						</div>
 						<button id="btnLogin" type="submit" class="btn btn-primary">Ingresar</button>
 					</div>
